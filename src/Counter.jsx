@@ -5,7 +5,7 @@ const Counter = () => {
 
   const subBtnHandler = () => {
     // console.log("U sub")
-    setCount(count - 1);
+    count > 1 && setCount(count - 1);
   };
 
   const addBtnHandler = () => {
