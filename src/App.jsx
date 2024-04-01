@@ -1,28 +1,36 @@
-import React from "react";
+import Box from "./Box";
+import Counter from "./Counter";
 
 const App = () => {
-
-  const addBtnHandler = () => {
-    console.log("U add") 
-  }
-
-  const subBtnHandler = () => {
-    console.log("U sub") 
-  }
-
-  return (
-    <div className=" grid grid-cols-2 p-5 gap-5">
-      <h1 className=" col-span-2 border border-gray-400 p-5 text-center text-5xl bg-gray-100 rounded-lg">
-        1
-      </h1>
-      <button onClick={addBtnHandler} className=" col-span-1 border active:scale-95 duration-100 border-gray-400 p-5 text-center bg-green-400 rounded-lg">
-        Sub
-      </button>
-      <button onClick={subBtnHandler} className=" col-span-1 border active:scale-95 duration-100 border-gray-400 p-5 text-center bg-red-400 rounded-lg">
-        Add
-      </button>
-    </div>
-  );
+  const faqs = [
+    {
+      "id": 1,
+      "question": "What is the return policy?",
+      "answer": "Our return policy allows returns within 30 days of purchase with a valid receipt."
+    },
+    {
+      "id": 2,
+      "question": "How do I track my order?",
+      "answer": "You can track your order by logging into your account on our website or using the tracking number provided in your confirmation email."
+    },
+    {
+      "id": 3,
+      "question": "Do you offer international shipping?",
+      "answer": "Yes, we offer international shipping to most countries. Shipping rates and times may vary depending on the destination."
+    },
+    {
+      "id": 4,
+      "question": "What payment methods do you accept?",
+      "answer": "We accept all major credit cards, PayPal, and Apple Pay for online purchases."
+    },
+    {
+      "id": 5,
+      "question": "How can I contact customer support?",
+      "answer": "You can contact our customer support team via email at support@example.com or by phone at +1-800-123-4567."
+    }
+  ]
+  
+  return faqs.map((faq) => <Box key={faq.id} question={faq.question} answer={faq.answer}/> );
 };
 
 export default App;
