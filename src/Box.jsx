@@ -1,29 +1,31 @@
 import React, { useState } from "react";
 
 const Box = (props) => {
-  const [hide, setHide] = useState(true);
+  
 
-  const openBtnHandler = () => {
-    setHide(false);
-  };
+  // const openBtnHandler = () => {
+  //   setHide(false);
+  // };
 
-  const closeBtnHandler = () => {
-    setHide(true);
-  };
+  // const closeBtnHandler = () => {
+  //   setHide(true);
+  // };
 
   const toggleBtnHandler = () => {
-    setHide(!hide);
+    // setHide(!hide);
+    // console.log(props.id)
+    props.clickBox(props.id)
   };
 
   return (
     <div className="">
-      <div className="p-3">
+      <div className="p-1">
         <button
           onClick={toggleBtnHandler}
           className=" flex justify-between w-full items-center border active:scale-100 duration-100 border-gray-400 p-2 text-center bg-red-400 rounded-lg"
         >
           <span className=" text-white">{props.question}</span>
-          {hide ? (
+          {props.hide ? (
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -63,13 +65,11 @@ const Box = (props) => {
         </button> */}
         <div
           className={`${
-            hide && "hidden"
+            props.hide && "hidden"
           } col-span-2 border border-gray-300 p-5 rounded-lg`}
         >
           {/* <h1 className="font-bold text-2xl">Text Box</h1> */}
-          <p className="">
-            {props.answer}
-          </p>
+          <p className="">{props.answer}</p>
         </div>
       </div>
     </div>
